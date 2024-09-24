@@ -12,6 +12,7 @@ import { errorHandler } from './middlewares/errorHandler.js';
 import { initMongoDB } from './db/database.js';
 import 'dotenv/config'
 import mocksRouter from "./routes/mocks.router.js";
+import petsRouter from "./routes/pets.router.js";
 
 const app = express();
 const PORT = 5000;
@@ -32,6 +33,7 @@ app.use('/carts', cartRouter);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/mocks", mocksRouter);
+app.use("/api/pets", petsRouter);
 
 app.use(errorHandler);
 
